@@ -19,7 +19,7 @@ public class UsageController {
     public ResponseEntity<UsageDto> getUserDeviceUsage(
             @PathVariable Long userId,
             @RequestParam(defaultValue = "3") int days) {
-//        final UsageDto usage = usageService.getXDaysUsageForUser(userId, days);
-        return ResponseEntity.ok(null);
+        final UsageDto usage = usageService.getXDaysUsageForUser(userId, days);
+        return ResponseEntity.ok(usage);
     }
 }

@@ -47,7 +47,7 @@ public class ParallelDataSimulator implements CommandLineRunner {
         ((ThreadPoolExecutor) executorService).setCorePoolSize(parallelThreads);
     }
 
-//    @Scheduled(fixedDelayString = "${simulation.interval-ms}")
+    @Scheduled(fixedDelayString = "${simulation.interval-ms}")
     public void sendMockData() {
         int batchSize = requestsPerInterval / parallelThreads;
         int remainder = requestsPerInterval % parallelThreads;
